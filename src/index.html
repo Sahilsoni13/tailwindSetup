@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sidebar</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+<body class="bg-[#0A0A0A] text-white">
+    <!-- Navbar -->
+    <div class="cantainer">
+        <nav class="grid  grid-cols-2 lg:grid-cols-[1fr_auto_1fr] items-center pt-[30px] pb-10">
+            <a href="#">
+                <img src="./icons/logo.svg" alt="logo">
+            </a>
+            <nav class="bg-[#2C2C2C] text-white rounded-full px-6 py-3  space-x-6 hidden lg:block">
+                <a href="#" class=" text-base font-medium font-inter text-white">Home</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="text-[#A3A3A3] text-base font-medium font-inter  hover:text-white transition">How It
+                    Works</a>
+                <span class="text-gray-500">|</span>
+                <a href="#"
+                    class="text-[#A3A3A3] text-base font-medium font-inter  hover:text-white transition">Features</a>
+                <span class="text-gray-500">|</span>
+                <a href="#"
+                    class="text-[#A3A3A3] text-base font-medium font-inter  hover:text-white transition">Pricing</a>
+            </nav>
+            <div class="hidden lg:flex justify-end space-x-4">
+                <button class=" text-base font-medium font-inter px-4 py-2">Login</button>
+                <a href="#"
+                    class="w-full max-w-[150px] group bg-white py-2 pl-8 pr-2 rounded-full flex justify-center items-center">
+                    <span class="text-base font-inter text-black mr-2.5">Sign Up</span>
+                    <span class="bg-black rounded-full">
+                        <img class="max-w-[40px] w-full  group-hover:translate-x-[3px] group-hover:translate-y-[-3px] transition-all duration-300  h-[40px]  "
+                            src="./icons/righticon.svg" alt="righticon">
+                    </span>
+                </a>
+            </div>
+            <button id="openSidebar" class="text-white flex justify-end text-2xl lg:hidden">
+                <img src="./icons/togglebar.svg" alt="togglebar">
+            </button>
+        </nav>
+    </div>
+
+    <!-- Sidebar -->
+    <div id="sidebar"
+        class="fixed top-0 right-0 bg-black z-50 lg:hidden w-full sm:w-[50%] px-5 h-full  text-white transform translate-x-full transition-transform duration-500">
+        <div class="relative h-full">
+            <div class="flex justify-between items-center  pt-[30px] pb-10 ">
+                <img src="./icons/logo.svg" alt="logo">
+                <button id="closeSidebar" class="text-white text-2xl">
+                    <img src="./icons/close.svg" alt="close">
+                </button>
+            </div>
+            <ul class="space-y-10">
+                <li><a href="#"
+                        class="block text-base font-inter text-[#A3A3A3] hover:text-white hover:underline">Home</a>
+                </li>
+                <li><a href="#" class="block text-base font-inter text-[#A3A3A3] hover:text-white hover:underline">How
+                        It
+                        Works</a></li>
+                <li><a href="#"
+                        class="block text-base font-inter text-[#A3A3A3] hover:text-white hover:underline">Features</a>
+                </li>
+                <li><a href="#"
+                        class="block text-base font-inter text-[#A3A3A3] hover:text-white hover:underline">Pricing</a>
+                </li>
+            </ul>
+            <div class="absolute bottom-0 pb-5 w-full bg-black">
+                <button
+                    class="w-full py-2  border border-[#505050] rounded-full text-base text-white font-inter ">Login</button>
+                <button
+                    class="w-full relative text-base font-inter bg-white text-black py-2 mt-2 rounded-full flex justify-center items-center">
+                    Sign Up
+                    <span class="bg-black absolute right-[10px]   rounded-full">
+                        <img src="./icons/righticon.svg" alt="righticon">
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="md:pb-[50px] pb-[40px]">
+        <div class="cantainer">
+            <div
+                class="md:bg-[url('../images/texturebanner.png')] overflow-hidden bg-top bg-[url('../images/textureres.png')] bg-cover rounded-[20px] sm:p-6  xl:pl-[71px] xl:pr-[42px] xl:pt-[75px] xl:pb-[94px] bg-no-repeat max-w-full">
+                <div class="flex flex-col lg:flex-row gap-5 justify-between items-center ">
+                    <div class="lg:max-w-[440px] w-full">
+                        <h3
+                            class="xl:text-[64px] lg:text-[54px]  font-light text-[40px] leading-[121%]  text-white font-Urbanist">
+                            <span class="font-semibold">Enhance Your </span>
+                            Dental Practice Connections
+                        </h3>
+                        <p
+                            class="leading-[172%] text-[#8A8A8A] md:text-[18px] text-base font-normal font-inter pt-[12px]">
+                            Manage
+                            lab
+                            relationships, compare prices, and track payments all in one place</p>
+                        <div class="flex space-x-4 md:pt-8 pt-6">
+                            <a href="#"
+                                class="w-full group max-w-[150px] bg-white py-2 pl-8 pr-2 rounded-full flex justify-center items-center">
+                                <span class="text-base font-inter text-black mr-2.5">
+                                    Sign Up</span>
+                                <span class="bg-black rounded-full">
+                                    <img class="max-w-[40px] w-full h-[40px]  group-hover:translate-x-[3px] group-hover:translate-y-[-3px] transition-all duration-300"
+                                        src="./icons/righticon.svg" alt="righticon">
+                                </span>
+                            </a>
+                            <button class=" text-base font-medium font-inter px-4 py-2">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="relative w-full max-w-[570px] aspect-square flex items-center justify-center">
+                        <!-- Background Circle Images -->
+                        <img src="./images/bannercircle1.png" alt="Orbit Circle"
+                            class="absolute w-[50%] h-[50%] max-w-full max-h-full object-contain">
+                        <img src="./images/bannercircle2.png" alt="Inner Orbit"
+                            class="absolute w-[80%] h-[80%] max-w-full max-h-full object-contain">
+
+                        <!-- Central Doctor Image -->
+                        <div
+                            class="absolute w-32 h-32 sm:w-40 sm:h-40 rounded-full z-10 flex items-center justify-center">
+                            <img src="./images/Profile.png" alt="Doctor"
+                                class=" min-[500px]:w-full min-[500px]:h-full w-[70%] h-[70%] object-contain rounded-full">
+                        </div>
+
+                        <!-- Orbiting Profile 1 (Top Right) -->
+                        <div
+                            class="absolute animate-upAndDown1 top-[12%] right-[5%] sm:top-[10%] sm:right-[8%] bg-[#232323] border border-[#3A3A3A] md:px-3 md:py-2 p-1 rounded-lg flex items-center gap-2 shadow-md">
+                            <img src="./images/DrEthan.png" alt="Dr. Ethan" class="w-8 h-8 rounded-full">
+                            <div>
+                                <p
+                                    class="text-white font-semibold md:text-[12px] text-[10px] sm:text-[14px] font-inter">
+                                    Dr. Ethan
+                                    Jones</p>
+                                <p class="text-[#A3A3A3] md:text-[10px] text-[8px] ">Endodontist</p>
+                            </div>
+                        </div>
+
+                        <!-- Orbiting Profile 2 (Bottom Left) -->
+                        <div
+                            class="absolute animate-upAndDown2 bottom-[18%] left-[8%] sm:bottom-[15%] sm:left-[10%] bg-[#232323] border border-[#3A3A3A] md:px-3 md:py-2 p-1 rounded-lg flex items-center gap-2 shadow-md">
+                            <img src="./images/DrDavid.png" alt="David Miller" class="w-8 h-8 rounded-full">
+                            <div>
+                                <p
+                                    class="text-white font-semibold md:text-[12px] text-[10px] sm:text-[14px] font-inter">
+                                    David Miller
+                                </p>
+                                <p class="text-[#A3A3A3] md:text-[10px] text-[8px] ">Financial Specialist</p>
+                            </div>
+                        </div>
+
+                        <!-- Orbiting Profile 3 (Middle Left) -->
+                        <div
+                            class="absolute animate-upAndDown3 top-[30%] left-[2%] sm:top-[28%] sm:left-[5%] bg-[#232323] border border-[#3A3A3A] p-1 md:px-3 md:py-2 rounded-lg flex items-center gap-2 shadow-md">
+                            <img src="./images/DrPriya.png" alt="Dr. Priya" class="w-8 h-8 rounded-full">
+                            <div>
+                                <p
+                                    class="text-white font-semibold md:text-[12px] text-[10px] sm:text-[14px] font-inter">
+                                    Dr. Priya
+                                    Gupta</p>
+                                <p class="text-[#A3A3A3] md:text-[10px] text-[8px] ">Periodontist</p>
+                            </div>
+                        </div>
+
+                        <!-- Orbiting Profile 4 (Middle Right) -->
+                        <div
+                            class="absolute animate-upAndDown4 md:top-[55%] top-[62%] right-[2%] sm:top-[50%] sm:right-[5%] bg-[#232323] border border-[#3A3A3A] md:px-3 md:py-2 p-1 rounded-lg flex items-center gap-2 shadow-md">
+                            <img src="./images/DrEmily.png" alt="Emily Rodriguez" class="w-8 h-8 rounded-full">
+                            <div>
+                                <p
+                                    class="text-white font-semibold md:text-[12px] text-[10px] sm:text-[14px] font-inter">
+                                    Emily
+                                    Rodríguez</p>
+                                <p class="text-[#A3A3A3] md:text-[10px] text-[8px] ">Dental Lab Technician</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="md:pb-[50px] pb-[40px]">
+        <div class="cantainer">
+            <div class="flex flex-col lg:flex-row md:gap-[30px] gap-6 items-start ">
+                <div class=" lg:max-w-[380px] w-full text-center lg:text-start">
+                    <h2 class="text-[#A3A3A3] text-base leading-[121%] md:pb-4 pb-2 tracking-[10px] font-inter ">
+                        KEY FEATURES
+                    </h2>
+                    <h3 class="md:text-[48px]  font-light text-[32px] leading-[121%]  text-white font-Urbanist">
+                        <span class="font-semibold">Features
+                            That</span>
+                        Simplify Your Dental Practice
+                    </h3>
+                </div>
+
+                <div class="grid sm:grid-cols-2 grid-cols-1 xl:gap-[30px] gap-5 lg:max-w-[calc(100%_-380px)]">
+                    <div
+                        class="bg-[url('../images/texture.png')] group bg-cover p-10 md:p-4 lg:p-6 xl:p-10 bg-no-repeat border border-[#313131] rounded-[24px]  lg:max-w-[380px] w-full ">
+                        <div class="flex flex-col ">
+                            <div class="bg-[#272727] w-fit p-2 rounded-[24px] mb-6">
+                                <img src="./icons/price.svg" alt="price">
+                            </div>
+                            <p
+                                class="leading-[120%] xl:text-[32px] md:text-[22px] text-[32px] font-semibold font-Urbanist ">
+                                Price
+                                Comparison</p>
+                            <p class="text-[#A9A9A9] font-inter font-normal leading-[177%] text-[18px] pt-3">Quickly
+                                compare
+                                lab
+                                pricing for
+                                various services to
+                                ensure you're getting the best value.
+                            </p>
+                            <a href="#" class="flex gap-1  items-center text-[#5D6777] mt-[56px]  ">
+                                Read More
+                                <img src="./icons/readmoreicon.svg"
+                                    class="group-hover:translate-y-[3px] group-hover:translate-x-[3px] duration-300  "
+                                    alt="readmoreicon">
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-[url('../images/texture.png')] group bg-cover p-10 md:p-4 lg:p-6 xl:p-10 bg-no-repeat border border-[#313131] rounded-[24px]  lg:max-w-[380px] w-full ">
+                        <div class="flex flex-col ">
+                            <div class="bg-[#272727] w-fit p-2 rounded-[24px] mb-6">
+                                <img src="./icons/Debt.svg" alt="price">
+                            </div>
+                            <p
+                                class="leading-[120%] xl:text-[32px] md:text-[22px] text-[32px] font-semibold font-Urbanist ">
+                                Debt Tracking</p>
+                            <p class="text-[#A9A9A9] font-inter font-normal leading-[177%] text-[18px] pt-3">
+                                Stay on top of payments with a built-in tracking system that helps you manage and follow
+                                up on overdue payments.
+                            </p>
+                            <a href="#" class="flex gap-1  items-center text-[#5D6777] mt-[56px] ">
+                                Read More
+                                <img src="./icons/readmoreicon.svg"
+                                    class="group-hover:translate-y-[3px] group-hover:translate-x-[3px] duration-300  "
+                                    alt="readmoreicon">
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-[url('../images/texture.png')] group bg-cover p-10 md:p-4 lg:p-6 xl:p-10 bg-no-repeat border border-[#313131] rounded-[24px]  lg:max-w-[380px] w-full ">
+                        <div class="flex flex-col ">
+                            <div class="bg-[#272727] w-fit p-2 rounded-[24px] mb-6">
+                                <img src="./icons/Search.svg" alt="price">
+                            </div>
+                            <p
+                                class="leading-[120%] xl:text-[32px] md:text-[22px] text-[32px] font-semibold font-Urbanist ">
+                                Search Tools</p>
+                            <p class="text-[#A9A9A9] font-inter font-normal leading-[177%] text-[18px] pt-3">
+                                Effortlessly search for dental labs or professionals by location and specific services.
+                            </p>
+                            <a href="#" class="flex gap-1  items-center text-[#5D6777] mt-[56px] ">
+                                Read More
+                                <img src="./icons/readmoreicon.svg"
+                                    class="group-hover:translate-y-[3px] group-hover:translate-x-[3px] duration-300  "
+                                    alt="readmoreicon">
+                            </a>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-[url('../images/texture.png')] group bg-cover p-10 md:p-4 lg:p-6 xl:p-10 bg-no-repeat border border-[#313131] rounded-[24px]  lg:max-w-[380px] w-full ">
+                        <div class="flex flex-col ">
+                            <div class="bg-[#272727] w-fit p-2 rounded-[24px] mb-6">
+                                <img src="./icons/Financial.svg" alt="price">
+                            </div>
+                            <p
+                                class="leading-[120%] xl:text-[32px] md:text-[22px] text-[32px] font-semibold font-Urbanist ">
+                                Financial Calculators</p>
+                            <p class="text-[#A9A9A9] font-inter font-normal leading-[177%] text-[18px] pt-3">Use our
+                                Use our financial tools to assess your exact hourly rate, factoring in lab costs,
+                                overhead, and time spent.
+                            </p>
+                            <a href="#" class="flex gap-1  items-center text-[#5D6777] mt-[56px] ">
+                                Read More
+                                <img src="./icons/readmoreicon.svg"
+                                    class="group-hover:translate-y-[3px] group-hover:translate-x-[3px] duration-300 "
+                                    alt="readmoreicon">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="  md:py-[50px] py-[40px] ">
+        <div class="cantainer">
+            <h2 class="text-[#A3A3A3] text-base leading-[121%] md:pb-4 pb-2 tracking-[10px] font-inter text-center ">Top
+                Reviews</h2>
+            <h3 class="leading-[121%] text-white font-inter font-semibold md:text-[48px] text-[32px] text-center ">What
+                Our Users Are
+                Saying</h3>
+            <div class="max-w-6xl w-full">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-6 md:py-[60px]">
+
+                    <div class="bg-black py-[60px] px-[30px] border border-[#313131] rounded-[24px] shadow-md">
+                        <div class="flex md:mb-2 justify-center items-center gap-2.5 pb-[24px]">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/graystar.svg" alt="graystar">
+                        </div>
+                        <h3 class="font-semibold  text-xl font-Urbanist text-center pb-2 leading-[160%] ">
+                            This platform
+                            saved our lab
+                            hours of financial guesswork. </h3>
+                        <p class="text-[#737373] text-center leading-[177%] font-inter font-normal text-[18px] ">COD-DDS
+                            has streamlined our
+                            financial
+                            management. We can
+                            easily
+                            compare prices and track payments in one place.</p>
+                        <div class="flex items-center justify-center mt-8">
+                            <img src="https://randomuser.me/api/portraits/women/5.jpg"
+                                class="w-10 h-10 rounded-full mr-3" alt="Aliya Atredies">
+                            <p class="text-base text-white font-medium font-inter leading-[120%]">John Stevens</p>
+                        </div>
+                    </div>
+                    <div class="bg-black py-[60px] px-[30px] border border-[#313131] rounded-[24px] shadow-md">
+                        <div class="flex md:mb-2 justify-center items-center gap-2.5 pb-[24px]">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/graystar.svg" alt="graystar">
+                        </div>
+                        <h3 class="font-semibold  text-xl font-Urbanist text-center pb-2 leading-[160%] ">
+                            This platform
+                            saved our lab
+                            hours of financial guesswork. </h3>
+                        <p class="text-[#737373] text-center leading-[177%] font-inter font-normal text-[18px] ">COD-DDS
+                            has streamlined our
+                            financial
+                            management. We can
+                            easily
+                            compare prices and track payments in one place.</p>
+                        <div class="flex items-center justify-center mt-8">
+                            <img src="https://randomuser.me/api/portraits/women/5.jpg"
+                                class="w-10 h-10 rounded-full mr-3" alt="Aliya Atredies">
+                            <p class="text-base text-white font-medium font-inter leading-[120%]">John Stevens</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-black py-[60px] px-[30px] border border-[#313131] rounded-[24px] shadow-md">
+                        <div class="flex md:mb-2 justify-center items-center gap-2.5 pb-[24px]">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/graystar.svg" alt="graystar">
+                        </div>
+                        <h3 class="font-semibold  text-xl font-Urbanist text-center pb-2 leading-[160%] ">
+                            This platform
+                            saved our lab
+                            hours of financial guesswork. </h3>
+                        <p class="text-[#737373] text-center leading-[177%] font-inter font-normal text-[18px] ">COD-DDS
+                            has streamlined our
+                            financial
+                            management. We can
+                            easily
+                            compare prices and track payments in one place.</p>
+                        <div class="flex items-center justify-center mt-8">
+                            <img src="https://randomuser.me/api/portraits/women/5.jpg"
+                                class="w-10 h-10 rounded-full mr-3" alt="Aliya Atredies">
+                            <p class="text-base text-white font-medium font-inter leading-[120%]">John Stevens</p>
+                        </div>
+                    </div>
+                    <div class="bg-black py-[60px] px-[30px] border border-[#313131] rounded-[24px] shadow-md  ">
+                        <div class="flex md:mb-2 justify-center items-center gap-2.5 pb-[24px]">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/graystar.svg" alt="graystar">
+                        </div>
+                        <h3 class="font-semibold  text-xl font-Urbanist text-center pb-2 leading-[160%] ">
+                            This platform
+                            saved our lab
+                            hours of financial guesswork. </h3>
+                        <p class="text-[#737373] text-center leading-[177%] font-inter font-normal text-[18px] ">
+                            COD-DDS
+                            has streamlined our
+                            financial
+                            management. We can
+                            easily
+                            compare prices and track payments in one place.</p>
+                        <div class="flex items-center justify-center mt-8">
+                            <img src="https://randomuser.me/api/portraits/women/5.jpg"
+                                class="w-10 h-10 rounded-full mr-3" alt="Aliya Atredies">
+                            <p class="text-base text-white font-medium font-inter leading-[120%]">John Stevens</p>
+                        </div>
+                    </div>
+
+                    <!-- Video Testimonial Card -->
+                    <div class="bg-black relative rounded-lg shadow-md lg:max-w-[380px] w-full group">
+                        <!-- Video Element (No Controls) -->
+                        <video id="testimonialVideo" class="rounded-lg w-full" poster="./images/videoposter.png">
+                            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+                        <!-- Custom Play/Pause Button (Initially Hidden) -->
+                        <div id="customButton" class="absolute inset-0 flex items-center justify-center cursor-pointer rounded-lg 
+                               group-hover:opacity-100 opacity-0 duration-300  ">
+                            <button class="bg-[#FFFFFF1A] w-[50px] h-[50px] flex justify-center items-center 
+                                       backdrop-blur-[34px] relative z-50 cursor-pointer text-black rounded-full text-lg 
+                                       group-hover:scale-110 ">
+                                <img id="playPauseIcon" src="./icons/play.svg" alt="play">
+                            </button>
+                        </div>
+
+                        <!-- Video Title -->
+                        <div class="absolute bottom-0 mx-8 mb-10">
+                            <div class="flex gap-1 items-center pb-4">
+                                <img src="./icons/whitestar.svg" alt="whitestar">
+                                <img src="./icons/whitestar.svg" alt="whitestar">
+                                <img src="./icons/whitestar.svg" alt="whitestar">
+                                <img src="./icons/whitestar.svg" alt="whitestar">
+                                <img src="./icons/graystar.svg" alt="graystar">
+                            </div>
+                            <h3 class="font-bold text-center font-Urbanist text-white text-[20px] leading-[160%]">
+                                A game-changer for managing my dental lab partnerships.
+                            </h3>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial Card 5 -->
+                    <div class="bg-black py-[60px] px-[30px] border border-[#313131] rounded-[24px] shadow-md">
+                        <div class="flex md:mb-2 justify-center items-center gap-2.5 pb-[24px]">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/whitestar.svg" alt="whitestar">
+                            <img src="./icons/graystar.svg" alt="graystar">
+                        </div>
+                        <h3 class="font-semibold  text-xl font-Urbanist text-center pb-2 leading-[160%] ">
+                            This platform
+                            saved our lab
+                            hours of financial guesswork. </h3>
+                        <p class="text-[#737373] text-center leading-[177%] font-inter font-normal text-[18px] ">COD-DDS
+                            has streamlined our
+                            financial
+                            management. We can
+                            easily
+                            compare prices and track payments in one place.</p>
+                        <div class="flex items-center justify-center mt-8">
+                            <img src="https://randomuser.me/api/portraits/women/5.jpg"
+                                class="w-10 h-10 rounded-full mr-3" alt="Aliya Atredies">
+                            <p class="text-base text-white font-medium font-inter leading-[120%]">John Stevens</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="flex justify-center ">
+                    <button
+                        class="text-white px-8 py-4 w-full md:w-fit rounded-full text-base font-inter leading-[121%] transition border border-white md:border-[#3A3A3A]">
+                        Load More
+                    </button>
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-[#151515]">
+        <div class="cantainer">
+            <div class="flex flex-col justify-center items-center">
+                <div class="flex md:justify-center justify-start w-full ">
+                    <a href="#">
+                        <img class="max-w-12 w-full" src="./icons/logo.svg" alt="logo">
+                    </a>
+                </div>
+                <ul
+                    class="md:my-[30px] my-6 flex flex-col md:flex-row w-full justify-start md:justify-center  md:items-center items-start md:gap-5 gap-4">
+                    <li>
+                        <a class="font-inter text-xl  transition-all duration-200 cursor-pointer text-white" href="#">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="font-inter text-xl text-[#5D6777] transition-all duration-200 cursor-pointer  hover:text-white">How
+                            It Works</a>
+                    </li>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="font-inter text-xl text-[#5D6777] transition-all duration-200 cursor-pointer  hover:text-white">Features</a>
+                    </li>
+                    </li>
+                    <li>
+                        <a class="font-inter text-xl text-[#5D6777] transition-all duration-200 cursor-pointer  hover:text-white"
+                            href="#">
+                            Pricing
+                        </a>
+                    </li>
+                </ul>
+                <div class="items-center justify-center gap-[10px] hidden md:flex ">
+                    <a href="#">
+                        <img class="max-w-8 w-full  transition-all duration-300 hover:translate-y-[-5px] hover:scale-[1.1] hover:rotate-6 cursor-pointer "
+                            src="./icons/facebook.svg" alt="socialicons">
+                    </a>
+                    <a href="#">
+                        <img class="max-w-8 w-full  transition-all duration-300 hover:translate-y-[-5px] hover:scale-[1.1] hover:rotate-6 cursor-pointer "
+                            src="./icons//twitter.svg" alt="socialicons">
+                    </a>
+                    <a href="#">
+                        <img class="max-w-8 w-full  transition-all duration-300 hover:translate-y-[-5px] hover:scale-[1.1] hover:rotate-6 cursor-pointer "
+                            src="./icons//linkedin.svg" alt="socialicons">
+                    </a>
+                </div>
+            </div>
+            <div class="w-full h-[2px] block custom-gradient  md:mt-[60px] mb-5">
+
+            </div>
+            <div class="flex flex-col md:flex-row justify-between items-center ">
+                <p class="md:text-base text-sm text-white font-normal font-inter">Copyright © 2018-2023. All rights
+                    reserved
+                </p>
+                <div class="md:flex hidden justify-center space-x-4 ">
+                    <a href="#" class=" text-base font-inter font-normal hover:text-gray-400">Privacy Policy</a>
+                    <a href="#" class=" text-base font-inter font-normal hover:text-gray-400">Terms of Service</a>
+                    <a href="#" class=" text-base font-inter font-normal hover:text-gray-400">Contact Us</a>
+                </div>
+                <div class="flex items-center justify-center gap-[10px] md:hidden mt-[15px]">
+                    <img class="max-w-8 w-full" src="./icons/facebook.svg" alt="socialicons">
+                    <img class="max-w-8 w-full" src="./icons//twitter.svg" alt="socialicons">
+                    <img class="max-w-8 w-full" src="./icons//linkedin.svg" alt="socialicons">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Sidebar -->
+    <script>
+        const openSidebar = document.getElementById('openSidebar');
+        const closeSidebar = document.getElementById('closeSidebar');
+        const sidebar = document.getElementById('sidebar');
+
+        openSidebar.addEventListener('click', () => {
+            sidebar.classList.remove('translate-x-full');
+        });
+
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.add('translate-x-full');
+        });
+
+        // Get elements
+        const video = document.getElementById("testimonialVideo");
+        const customButton = document.getElementById("customButton");
+        const playPauseIcon = document.getElementById("playPauseIcon");
+
+        // Play/Pause functionality
+        customButton.addEventListener("click", () => {
+            if (video.paused) {
+                video.play();
+                playPauseIcon.src = "./icons/play.svg"; // Change to pause icon
+            } else {
+                video.pause();
+                playPauseIcon.src = "./icons/play.svg"; // Change to play icon
+            }
+        });
+
+        // Show button when hovering over video
+        video.addEventListener("mouseenter", () => {
+            customButton.classList.remove("opacity-0");
+        });
+
+        video.addEventListener("mouseleave", () => {
+            customButton.classList.add("opacity-0");
+        });
+
+        // Ensure correct icon on pause or video end
+        video.addEventListener("pause", () => {
+            playPauseIcon.src = "./icons/play.svg";
+        });
+
+        video.addEventListener("ended", () => {
+            playPauseIcon.src = "./icons/play.svg";
+        });
+    </script>
+
+</body>
+<script type="module" src="/assets/js/main.js"></script>
+
+</html>

@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard UI</title>
+  <link href="./output.css" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body class="bg-gray-100 font-sans">
+  <div class="flex bg-white">
+
+    <div id="sidebar"
+      class="p-5 bg-[#FCFCFD] md:block hidden z-20  transition-all relative duration-200 w-[120px] sidebar-collapsed ">
+      <div class="logoimageres max-w-[80px] h-[60px] flex justify-center items-center">
+        <a href="#">
+          <img class=" max-w-[34px] h-[34px]" src="./icons/dashbardlogoshort.svg" alt="dashbardlogoshort">
+        </a>
+      </div>
+      <div id="logoText">
+        <a href="#">
+          <div class="flex items-center mb-6 bg-[#0000000a] rounded-[12px] cursor-pointer">
+            <img src="./icons/dashboardlogo.svg" alt="dashbardlogoshort" class="p-[30px] w-full ">
+          </div>
+        </a>
+      </div>
+      <!-- Menu Items -->
+      <div class="sidebar-collapsed ">
+        <ul class="tabs space-y-2 h-fit ">
+          <li data-slug="dashboard"
+            class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-full cursor-pointer">
+            <img src="./icons/appicon.png" alt="appicon" data-hover="./icons/appiconhover.png"
+              data-default="./icons/appicon.png">
+            <span class="hidden menu-text group-hover:text-white">Dashboard</span>
+            <span class="tooltip absolute top-[10px] left-[50px] group-hover:block hidden">
+              <div class="relative">
+                <div class="bg-black rounded-[4px] pl-4 text-nowrap text-[12px] font-inter pr-2 py-1 text-white">
+                  <div class="w-[15px] absolute top-[5px] left-[-2px] bg-black h-[15px] rotate-[40deg] "></div>
+                  Dashboard
+                </div>
+              </div>
+            </span>
+          </li>
+
+          <li data-slug="profile"
+            class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-full cursor-pointer">
+            <img src="./icons/profileicon.png" alt="profileicon" data-hover="./icons/profileiconhover.png"
+              data-default="./icons/profileicon.png">
+            <span class="hidden menu-text group-hover:text-white">My Profile </span>
+            <span class="tooltip absolute top-[10px] left-[50px] group-hover:block hidden">
+              <div class="relative">
+                <div class="bg-black rounded-[4px] pl-4 text-nowrap text-[12px] font-inter pr-2 py-1 text-white">
+                  <div class="w-[15px] absolute top-[5px] left-[-2px] bg-black h-[15px] rotate-[40deg] "></div>
+                  My Profile
+                </div>
+              </div>
+            </span>
+          </li>
+
+          <li data-slug="report"
+            class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-full cursor-pointer">
+            <img src="./icons/ethereum.png" alt="ethereum" data-hover="./icons/ethereumhover.png"
+              data-default="./icons/ethereum.png">
+            <span class="hidden menu-text group-hover:text-white">Report Debts</span>
+            <span class="tooltip absolute top-[10px] left-[50px] group-hover:block hidden">
+              <div class="relative">
+                <div class="bg-black rounded-[4px] pl-4 text-nowrap text-[12px] font-inter pr-2 py-1 text-white">
+                  <div class="w-[15px] absolute top-[5px] left-[-2px] bg-black h-[15px] rotate-[40deg] "></div>
+                  Report Debts
+                </div>
+              </div>
+            </span>
+          </li>
+
+          <li data-slug="dentist"
+            class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-full cursor-pointer">
+            <img src="./icons/report.png" alt="report" data-hover="./icons/reporthover.png"
+              data-default="./icons/report.png">
+            <span class="hidden menu-text group-hover:text-white">Dentist Search</span>
+            <span class="tooltip absolute top-[10px] left-[50px] group-hover:block hidden">
+              <div class="relative">
+                <div class="bg-black rounded-[4px] pl-4 text-nowrap text-[12px] font-inter pr-2 py-1 text-white">
+                  <div class="w-[15px] absolute top-[5px] left-[-2px] bg-black h-[15px] rotate-[40deg] "></div>
+                  Dentist Search
+                </div>
+              </div>
+            </span>
+          </li>
+          <li data-slug="price"
+            class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-full cursor-pointer">
+            <img src="./icons/searchhover.png" alt="searchicon" data-hover="./icons/searchicon.png"
+              data-default="./icons/searchhover.png">
+            <span class="hidden menu-text group-hover:text-white">Price Tools</span>
+            <span class="tooltip absolute top-[10px] left-[50px] group-hover:block hidden">
+              <div class="relative">
+                <div class="bg-black rounded-[4px] pl-4 text-nowrap text-[12px] font-inter pr-2 py-1 text-white">
+                  <div class="w-[15px] absolute top-[5px] left-[-2px] bg-black h-[15px] rotate-[40deg] "></div>
+                  Price Tools
+                </div>
+              </div>
+            </span>
+          </li>
+
+          <li data-slug="messages"
+            class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-full cursor-pointer">
+            <img src="./icons/message.png" alt="message" data-hover="./icons/messagehover.png"
+              data-default="./icons/message.png">
+            <span class="hidden menu-text group-hover:text-white">Messages</span>
+            <span class="tooltip absolute top-[10px] left-[50px] group-hover:block hidden">
+              <div class="relative">
+                <div class="bg-black rounded-[4px] pl-4 text-nowrap text-[12px] font-inter pr-2 py-1 text-white">
+                  <div class="w-[15px] absolute top-[5px] left-[-2px] bg-black h-[15px] rotate-[40deg] "></div>
+                  Messages
+                </div>
+              </div>
+            </span>
+          </li>
+
+          <li data-slug="billing"
+            class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-full cursor-pointer">
+            <img src="./icons/paymentshover.png" alt="payments" data-hover="./icons/payments.png"
+              data-default="./icons/paymentshover.png">
+            <span class="hidden menu-text group-hover:text-white">Billing</span>
+            <span class="tooltip absolute top-[10px] left-[50px] group-hover:block hidden">
+              <div class="relative">
+                <div class="bg-black rounded-[4px] pl-4 text-nowrap text-[12px] font-inter pr-2 py-1 text-white">
+                  <div class="w-[15px] absolute top-[5px] left-[-2px] bg-black h-[15px] rotate-[40deg] "></div>
+                  Billing
+                </div>
+              </div>
+            </span>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="sidebar-collapsed  absolute bottom-[0px]  ">
+        <ul class="tabs h-fit">
+          <li class="group relative flex items-center space-x-3 p-3 hover:bg-black rounded-full cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path fill="black"
+                d="M18.4125 2.25H8.5875C7.56 2.25 6.75 3.3 6.75 4.635V9C6.75 9.19891 6.82902 9.38968 6.96967 9.53033C7.11032 9.67098 7.30109 9.75 7.5 9.75C7.69891 9.75 7.88968 9.67098 8.03033 9.53033C8.17098 9.38968 8.25 9.19891 8.25 9V4.635C8.23113 4.47123 8.25195 4.30532 8.31069 4.15129C8.36943 3.99726 8.46437 3.85962 8.5875 3.75H18.405C18.4875 3.75 18.75 4.0725 18.75 4.635V19.365C18.7689 19.5288 18.748 19.6947 18.6893 19.8487C18.6306 20.0027 18.5356 20.1404 18.4125 20.25H8.595C8.5125 20.25 8.25 19.9275 8.25 19.365V15C8.25 14.8011 8.17098 14.6103 8.03033 14.4697C7.88968 14.329 7.69891 14.25 7.5 14.25C7.30109 14.25 7.11032 14.329 6.96967 14.4697C6.82902 14.6103 6.75 14.8011 6.75 15V19.365C6.75 20.7 7.56 21.75 8.5875 21.75H18.4125C19.44 21.75 20.25 20.7 20.25 19.365V4.635C20.25 3.3 19.44 2.25 18.4125 2.25Z" />
+              <path fill="black"
+                d="M12.2175 13.7174C12.1472 13.7871 12.0914 13.8701 12.0533 13.9615C12.0153 14.0529 11.9957 14.1509 11.9957 14.2499C11.9957 14.3489 12.0153 14.4469 12.0533 14.5383C12.0914 14.6297 12.1472 14.7127 12.2175 14.7824C12.2872 14.8527 12.3702 14.9085 12.4616 14.9466C12.553 14.9846 12.651 15.0042 12.75 15.0042C12.849 15.0042 12.947 14.9846 13.0384 14.9466C13.1298 14.9085 13.2128 14.8527 13.2825 14.7824L15.5325 12.5324C15.6008 12.4611 15.6543 12.377 15.69 12.2849C15.765 12.1023 15.765 11.8975 15.69 11.7149C15.6543 11.6228 15.6008 11.5387 15.5325 11.4674L13.2825 9.21739C13.1413 9.07617 12.9497 8.99683 12.75 8.99683C12.5503 8.99683 12.3587 9.07617 12.2175 9.21739C12.0763 9.35862 11.9969 9.55017 11.9969 9.74989C11.9969 9.94962 12.0763 10.1412 12.2175 10.2824L13.1925 11.2499H4.5C4.30109 11.2499 4.11032 11.3289 3.96967 11.4696C3.82902 11.6102 3.75 11.801 3.75 11.9999C3.75 12.1988 3.82902 12.3896 3.96967 12.5302C4.11032 12.6709 4.30109 12.7499 4.5 12.7499H13.1925L12.2175 13.7174Z" />
+            </svg>
+            <span class="hidden menu-text group-hover:text-white">Logout</span>
+            <span class="tooltip absolute top-[10px] left-[50px] group-hover:block hidden">
+              <div class="relative">
+                <div class="bg-black rounded-[4px] pl-4 text-nowrap text-[12px] font-inter pr-2 py-1 text-white">
+                  <div class="w-[15px] absolute top-[5px] left-[-2px] bg-black h-[15px] rotate-[40deg] "></div>
+                  Logout
+                </div>
+              </div>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex-1 relative w-[60%] border-l rounded-[30px]  bg-white">
+      <header
+        class="bg-white shadow-md px-5 py-4 md:px-[30px] md:py-4 md:border-b md:rounded-tl-[30px] border-[#0000001A] ">
+        <div id="toggleSidebar" class="absolute md:block hidden top-[83px] z-50 cursor-pointer left-[-13px]">
+          <img src="./images/sidebaricon.png" alt="sidebaricon">
+        </div>
+        <div class="flex justify-between items-center">
+          <div>
+            <nav class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <img id="toggleButtonres" class="md:hidden block w-10 h-10 cursor-pointer" src="./icons/toggle.svg"
+                  alt="toggle">
+                <h1 class="md:text-xl text-[14px] font-semibold text-[#354155]">Welcome</h1>
+              </div>
+            </nav>
+
+
+            <!-- side bar -->
+            <div id="sidebarres"
+              class="fixed md:hidden flex justify-between flex-col left-0 top-0 h-screen u w-64 bg-white shadow-lg z-50 transform -translate-x-full md:translate-x-0 transition-transform duration-300">
+              <div>
+                <div class="p-4 flex justify-between items-center">
+                  <img src="./icons/dashbardlogoshort.svg" alt="dashbardlogoshort">
+                  <button id="closeSidebar" class="md:hidden text-gray-500 text-4xl">&times;</button>
+                </div>
+                <ul class="mt-8 px-5 space-y-3">
+                  <li data-slug="dashboard"
+                    class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-[12px] cursor-pointer">
+                    <img src="./icons/appicon.png" alt="appicon" data-hover="./icons/appiconhover.png"
+                      data-default="./icons/appicon.png">
+                    <span class="group-hover:text-white">Dashboard</span>
+                  </li>
+
+                  <li data-slug="profile"
+                    class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-[12px] cursor-pointer">
+                    <img src="./icons/profileicon.png" alt="profileiconhover" data-hover="./icons/profileiconhover.png"
+                      data-default="./icons/profileicon.png">
+                    <span class="group-hover:text-white">My Profile </span>
+                  </li>
+                  <li data-slug="report"
+                    class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-[12px] cursor-pointer">
+                    <img src="./icons/ethereum.png" alt="" data-hover="./icons/ethereumhover.png"
+                      data-default="./icons/ethereum.png">
+                    <span class="group-hover:text-white">Report Debts</span>
+                  </li>
+                  <li data-slug="dentist"
+                    class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-[12px] cursor-pointer">
+                    <img src="./icons/report.png" alt="" data-hover="./icons/reporthover.png"
+                      data-default="./icons/report.png">
+                    <span class="group-hover:text-white">Dentist Search</span>
+
+                  </li>
+                  <li data-slug="price"
+                    class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-[12px] cursor-pointer">
+                    <img src="./icons/searchhover.png" alt="" data-hover="./icons/searchicon.png"
+                      data-default="./icons/searchhover.png">
+                    <span class="group-hover:text-white">Price Tools</span>
+                  </li>
+                  <li data-slug="messages"
+                    class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-[12px] cursor-pointer">
+                    <img src="./icons/message.png" alt="" data-hover="./icons/messagehover.png"
+                      data-default="./icons/message.png">
+                    <span class="group-hover:text-white">Messages</span>
+                  </li>
+                  <li data-slug="billing"
+                    class="group icon relative menu-item  flex items-center space-x-3 p-3 hover:bg-black rounded-[12px] cursor-pointer">
+                    <img src="./icons/paymentshover.png" alt="payments" data-hover="./icons/payments.png"
+                      data-default="./icons/paymentshover.png">
+                    <span class="group-hover:text-white">Billing</span>
+                  </li>
+                </ul>
+              </div>
+
+              <ul class="absolute left-0 right-0 bottom-0 p-8 bg-white">
+                <li
+                  class="group relative flex items-center space-x-3 p-3 hover:bg-black border border-[#E7E7E7] rounded-[12px] cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fill="black"
+                      d="M18.4125 2.25H8.5875C7.56 2.25 6.75 3.3 6.75 4.635V9C6.75 9.19891 6.82902 9.38968 6.96967 9.53033C7.11032 9.67098 7.30109 9.75 7.5 9.75C7.69891 9.75 7.88968 9.67098 8.03033 9.53033C8.17098 9.38968 8.25 9.19891 8.25 9V4.635C8.23113 4.47123 8.25195 4.30532 8.31069 4.15129C8.36943 3.99726 8.46437 3.85962 8.5875 3.75H18.405C18.4875 3.75 18.75 4.0725 18.75 4.635V19.365C18.7689 19.5288 18.748 19.6947 18.6893 19.8487C18.6306 20.0027 18.5356 20.1404 18.4125 20.25H8.595C8.5125 20.25 8.25 19.9275 8.25 19.365V15C8.25 14.8011 8.17098 14.6103 8.03033 14.4697C7.88968 14.329 7.69891 14.25 7.5 14.25C7.30109 14.25 7.11032 14.329 6.96967 14.4697C6.82902 14.6103 6.75 14.8011 6.75 15V19.365C6.75 20.7 7.56 21.75 8.5875 21.75H18.4125C19.44 21.75 20.25 20.7 20.25 19.365V4.635C20.25 3.3 19.44 2.25 18.4125 2.25Z" />
+                    <path fill="black"
+                      d="M12.2175 13.7174C12.1472 13.7871 12.0914 13.8701 12.0533 13.9615C12.0153 14.0529 11.9957 14.1509 11.9957 14.2499C11.9957 14.3489 12.0153 14.4469 12.0533 14.5383C12.0914 14.6297 12.1472 14.7127 12.2175 14.7824C12.2872 14.8527 12.3702 14.9085 12.4616 14.9466C12.553 14.9846 12.651 15.0042 12.75 15.0042C12.849 15.0042 12.947 14.9846 13.0384 14.9466C13.1298 14.9085 13.2128 14.8527 13.2825 14.7824L15.5325 12.5324C15.6008 12.4611 15.6543 12.377 15.69 12.2849C15.765 12.1023 15.765 11.8975 15.69 11.7149C15.6543 11.6228 15.6008 11.5387 15.5325 11.4674L13.2825 9.21739C13.1413 9.07617 12.9497 8.99683 12.75 8.99683C12.5503 8.99683 12.3587 9.07617 12.2175 9.21739C12.0763 9.35862 11.9969 9.55017 11.9969 9.74989C11.9969 9.94962 12.0763 10.1412 12.2175 10.2824L13.1925 11.2499H4.5C4.30109 11.2499 4.11032 11.3289 3.96967 11.4696C3.82902 11.6102 3.75 11.801 3.75 11.9999C3.75 12.1988 3.82902 12.3896 3.96967 12.5302C4.11032 12.6709 4.30109 12.7499 4.5 12.7499H13.1925L12.2175 13.7174Z" />
+                  </svg>
+                  <span class="group-hover:text-white">Logout</span>
+                </li>
+              </ul>
+
+            </div>
+
+
+
+          </div>
+          <div class="flex items-center space-x-6 relative justify-center">
+            <div class="relative group md:h-[60px] h-[36px]">
+              <button
+                class="relative md:-mb-10 bg-[#F7F8F9] border b0rder-[#E7E7E7] rounded-[12px] md:w-[60px] md:h-[60px] h-[36px] w-[36px] flex justify-center items-center">
+                <img src="./icons/notification.svg" alt="notification">
+                <span
+                  class="absolute md:top-[15px] top-[4px] md:right-[15px] right-[4px] bg-red-500 text-white text-xs w-2.5 h-2.5 rounded-full"></span>
+              </button>
+              <div
+                class="absolute md:right-0 right-[-50px]  md:mt-6 md:w-[353px] w-[300px] bg-white shadow-lg rounded-lg transition-all duration-500 md:p-2.5 p-1 hidden group-hover:block">
+                <div class="flex justify-between items-center border-b mb-2 py-3 px-4 ">
+                  <div class="flex flex-col">
+                    <span class="text-[#111827] text-base font-inter font-semibold">Notification</span>
+                    <span class="text-[#5D6777] text-[12px] font-inter font-normal">You have 3 new notification</span>
+                  </div>
+                  <a href="#" class="text-[#EA4C4C] text-sm underline">Clear All</a>
+                </div>
+                <div class="mt-3 space-y-3">
+                  <div class="py-2 px-3 hover:bg-[#FAFAFA] rounded-lg">
+                    <div class="flex gap-2.5 items-start">
+                      <div
+                        class="max-w-[30px] h-[30px] flex justify-center items-center w-full bg-white border border-[#E7E7E7] rounded-full">
+                        <img class="max-w-[15px] w-full" src="./icons/tickicon.svg" alt="tickicon">
+                      </div>
+                      <div>
+                        <p class="text-sm text-[#5D6777]">Your profile update was successful, ensuring your information
+                          is
+                          accurate.</p>
+                        <span class="text-[12px] font-medium text-[#241806] font-inter ">2 hours ago</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="py-2 px-3 hover:bg-[#FAFAFA] rounded-lg">
+                    <div class="flex gap-2.5 items-start">
+                      <div
+                        class="max-w-[30px] h-[30px] flex justify-center items-center w-full bg-white border border-[#E7E7E7] rounded-full">
+                        <img class="max-w-[15px] w-full" src="./icons/messagebox2.svg" alt="messagebox2">
+                      </div>
+                      <div>
+                        <p class="text-sm text-[#5D6777]">Your profile update was successful, ensuring your information
+                          is
+                          accurate.</p>
+                        <span class="text-xs text-gray-500">2 hours ago</span>
+                        <div class="flex gap-2.5 items-center mt-2.5 ">
+                          <button
+                            class="border border-[#D7D7D7] py-1 px-2.5 text-[12px] font-normal font-inter leading-[121%] text-[#354155] rounded-[4px] ">
+                            View
+                          </button>
+                          <span class="text-[#EA4C4C] text-[12px] font-normal leading-[121%]">Clear</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="py-2 px-3 hover:bg-[#FAFAFA] rounded-lg">
+                    <div class="flex gap-2.5 items-start">
+                      <div
+                        class="max-w-[30px] h-[30px] flex justify-center items-center w-full bg-white border border-[#E7E7E7] rounded-full">
+                        <img class="max-w-[15px] w-full" src="./icons/paymentfailed.svg" alt="paymentfailed">
+                      </div>
+                      <div>
+                        <p class="text-sm text-[#5D6777]">Your profile update was successful, ensuring your information
+                          is
+                          accurate.</p>
+                        <span class="text-xs text-gray-500">2 hours ago</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative group">
+              <div class="flex items-center space-x-3 cursor-pointer md:px-5 md:py-3  rounded-full bg-[#F7F8F9]">
+                <img src="./images/DrDavid.png" alt="User" class="w-10 h-10 rounded-full">
+                <div class="md:block hidden ">
+                  <p class="text-[14px] font-inter text-[#201F28] font-semibold">Wade Warren</p>
+                  <p class="text-[14px] font-normal text-[#1D1D1F99]">Admin</p>
+                </div>
+                <img class="md:block hidden" src="./icons/iconsbottom.svg" alt="iconsbottom">
+              </div>
+              <div class="absolute right-0 -mt-1 w-[200px] bg-white shadow-lg rounded-lg hidden group-hover:block">
+                <a href="#"
+                  class="flex items-center space-x-3 px-4 py-3  font-inter [#354155] hover:bg-gray-100 rounded-lg">
+                  <img src="./icons/profile.svg" alt="profile">
+                  <span class="text-gray-700">Profile</span>
+                </a>
+                <a href="#"
+                  class="flex items-center space-x-3 px-4 py-3 font-inter  text-[#354155] hover:bg-gray-100 rounded-lg">
+                  <img src="./icons/setting.svg" alt="setting">
+                  <span class="text-gray-700">Settings</span>
+                </a>
+                <a href="#"
+                  class="flex items-center space-x-3 px-4 py-3 font-inter  text-[#354155] hover:bg-gray-100 rounded-lg">
+                  <img src="./icons/support.svg" alt="support">
+                  <span class="text-gray-700">Support & Help</span>
+                </a>
+                <a href="#"
+                  class="flex items-center space-x-3 px-4 py-3 font-inter  text-[#354155]  hover:bg-gray-100 rounded-lg">
+                  <img src="./icons/logoOut.svg" alt="logoOut">
+                  <span>Logout</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="md:p-[30px] px-4 py-5 bg-white">
+        <div class="flex lg:flex-row flex-col justify-between lg:items-center items-start md:p-4 md:gap-6 gap-4">
+          <div>
+            <h2 class="md:text-[20px] text-base font-inter leading-[121%] font-semibold text-[#111827] ">Welcome
+              Back.
+              Premier dental
+              lab!</h2>
+            <p class="md:text-base text-[12px] font-inter font-normal leading-[121%] text-[#6B7280] pt-2">Here’s
+              your
+              lab’s overview
+              for
+              today</p>
+          </div>
+          <div class="flex   flex-wrap gap-2 md:gap-4 ">
+            <button
+              class="bg-black text-white md:text-sm text-xs md:px-4 md:py-2 px-3 py-2 rounded-lg flex items-center space-x-2 text-nowrap">
+              <img src="./icons/addicon.svg" alt="addicon">
+              <span>Report New Debt</span>
+            </button>
+            <button
+              class="border border-gray-200 bg-gray-100 md:text-sm text-xs md:px-4 md:py-2 px-3 py-2 rounded-lg flex items-center space-x-2 shadow-sm text-nowrap">
+              <img src="./icons/searchicon.svg" alt="">
+              <span>Find Dentist</span>
+            </button>
+            <button
+              class="border border-gray-200 bg-gray-100 md:text-sm text-xs md:px-4 md:py-2 px-3 py-2 rounded-lg flex items-center space-x-2 shadow-sm text-nowrap">
+              <img src="./icons/messagebox.svg" alt="">
+              <span>Send Messages</span>
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-center pt-5">
+          <div
+            class="bg-[#F7F8F9] w-full  hover:shadow-md duration-300 transition-all rounded-lg md:p-6 p-4 border flex flex-col">
+            <div class="flex items-center space-x-2">
+              <span class="text-red-500 text-lg">
+                <img src="./icons/Reported.svg" alt="Reported">
+              </span>
+              <p class="text-[#201F23] font-semibold font-inter leading-[121%]">Reported Debts</p>
+            </div>
+            <div class="flex gap-6 flex-wrap items-center md:mt-6 mt-4">
+              <h2 class="md:text-[30px] text-[24px] font-medium font-inter leading-[121%] ">$24.500</h2>
+              <p class=" text-[13px] md:text-sm font-inter font-medium text-[#596269] mt-1 flex items-center gap-1">
+                <span
+                  class="text-[#395917] flex gap-[2px] items-center font-medium font-inter p-1 rounded-[8px] bg-[#405F1F1A] text-xs">
+                  <img src="./icons/graphtop.svg" alt="graphtop">
+                  12</span>
+                12
+                Outstanding
+                cases
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-[#F7F8F9] w-full  hover:shadow-md duration-300 transition-all rounded-lg md:p-6 p-4 border flex flex-col">
+            <div class="flex items-center space-x-2">
+              <span class="text-red-500 text-lg">
+                <img src="./icons/PriceComparison.svg" alt="PriceComparison">
+              </span>
+              <p class="text-[#201F23] font-semibold font-inter leading-[121%]">Price Comparison</p>
+            </div>
+            <div class="flex gap-6 flex-wrap items-center md:mt-6 mt-4">
+              <h2 class="md:text-[30px] text-[24px] font-medium font-inter leading-[121%] ">+15%</h2>
+              <p class=" text-[13px] md:text-sm font-inter font-medium text-[#596269] mt-1 flex items-center gap-1">
+                <span
+                  class="text-[#395917] flex gap-[2px] items-center font-medium font-inter p-1 rounded-[8px] bg-[#405F1F1A] text-xs">
+                  <img src="./icons/graphtop.svg" alt="graphtop">
+                  15</span>
+                Above State Aveage
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-[#F7F8F9] w-full  hover:shadow-md duration-300 transition-all rounded-lg md:p-6 p-4 border flex flex-col">
+            <div class="flex items-center space-x-2">
+              <span class="text-red-500 text-lg">
+                <img src="./icons/ActiveCases.svg" alt="ActiveCases">
+              </span>
+              <p class="text-[#201F23] font-semibold font-inter leading-[121%]">Active Cases</p>
+            </div>
+            <div class="flex gap-6 flex-wrap items-center md:mt-6 mt-4">
+              <h2 class="md:text-[30px] text-[24px] font-medium font-inter leading-[121%] ">47</h2>
+              <p class=" text-[13px] md:text-sm font-inter font-medium text-[#596269] mt-1 flex items-center gap-1">
+                <span
+                  class="text-[#395917] flex gap-[2px] items-center font-medium font-inter p-1 rounded-[8px] bg-[#405F1F1A] text-xs">
+                  <!-- <img src="./icons/graphtop.svg" alt="graphtop">
+                  12</span> -->
+                  This month
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-6 md:mt-[30px] mt-5 rounded-lg border border-[#EEEEEE] shadow-md">
+          <h2 class="text-[20px] font-semibold font-inter leading-[121%] mb-4">Price Comparison Chart</h2>
+          <div class="h-[400px] w-full">
+            <canvas id="priceComparisonChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById("toggleSidebar");
+    const sidebar = document.getElementById("sidebar");
+    const menuTexts = document.querySelectorAll(".menu-text");
+    const tooltips = document.querySelectorAll(".tooltip");
+    const logoImage = document.querySelector(".logoimageres"); // Short logo
+    const logoText = document.getElementById("logoText"); // Full logo
+
+    let isExpanded = false;
+
+    toggleButton.addEventListener("click", () => {
+      isExpanded = !isExpanded;
+      sidebar.classList.toggle("sidebar-expanded", isExpanded);
+      sidebar.classList.toggle("sidebar-collapsed", !isExpanded);
+
+      if (isExpanded) {
+        sidebar.classList.remove("w-[120px]", "bg-white");
+        sidebar.classList.add("w-56", "bg-[#FCFCFD]"); // Expanded bg color
+
+        menuTexts.forEach(text => text.classList.remove("hidden"));
+        logoImage.classList.add("hidden");
+        logoText.classList.remove("hidden");
+
+        tooltips.forEach(tooltip => {
+          tooltip.classList.add("hidden");
+          tooltip.classList.remove("group-hover:block");
+        });
+
+      } else {
+        sidebar.classList.remove("w-56", "bg-[#FCFCFD]");
+        sidebar.classList.add("w-[120px]", "bg-white"); // Collapsed bg color
+
+        menuTexts.forEach(text => text.classList.add("hidden"));
+        logoImage.classList.remove("hidden");
+        logoText.classList.add("hidden");
+
+        tooltips.forEach(tooltip => {
+          tooltip.classList.add("group-hover:block");
+          tooltip.classList.remove("hidden");
+        });
+      }
+    });
+
+    const tabs = document.querySelector(".tabs");
+
+    if (isExpanded) {
+      tabs.classList.remove("bg-[#F7F8F9]");
+      tabs.classList.add("bg-[#FCFCFD]");
+    } else {
+      tabs.classList.remove("bg-[#FCFCFD]");
+      tabs.classList.add("bg-[#F7F8F9]");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleButtonres = document.getElementById("toggleButtonres");
+      const closeButton = document.getElementById("closeSidebar");
+      const sidebarres = document.getElementById("sidebarres");
+
+      toggleButtonres.addEventListener("click", () => {
+        sidebarres.classList.toggle("-translate-x-full");
+      });
+
+      closeButton.addEventListener("click", () => {
+        sidebarres.classList.add("-translate-x-full");
+      });
+    });
+
+    const ctx = document.getElementById('priceComparisonChart').getContext('2d');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [
+          {
+            label: 'Current Year',
+            data: [10000, 30000, 60000, 25000, 8000, 32000, 12000, 33000, 47000, 6000, 21000, 38000],
+            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+            borderRadius: 5
+          },
+          {
+            label: 'Previous Year',
+            data: [7000, 22000, 30000, 41000, 4000, 43000, 20000, 25000, 23000, 5000, 17000, 25000],
+            backgroundColor: 'rgba(102, 252, 241, 0.7)',
+            borderRadius: 5
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: function (value) {
+                return value / 1000 + 'k';
+              }
+            }
+          }
+        }
+      }
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      const menuItems = document.querySelectorAll(".menu-item");
+
+      // Function to update active state and change images
+      function updatePage() {
+        const currentHash = window.location.hash.substring(1) || "dashboard"; // Default to dashboard if empty
+
+        menuItems.forEach(item => {
+          const img = item.querySelector('img');
+
+          if (item.dataset.slug === currentHash) {
+            item.classList.add("bg-black", "text-white", "active"); // Add active styles
+            if (img) img.src = img.dataset.hover; // Change to hover image
+          } else {
+            item.classList.remove("bg-black", "text-white", "active"); // Remove active styles
+            if (img) img.src = img.dataset.default; // Reset to default image
+          }
+        });
+
+        // Update page title and content
+        const pageTitle = document.getElementById("page-title");
+        const pageContent = document.getElementById("page-content");
+        const activeItem = document.querySelector(`.menu-item[data-slug="${currentHash}"]`);
+
+        if (activeItem) {
+          pageTitle.innerText = activeItem.innerText.trim();
+          pageContent.innerHTML = `<p>Welcome to the ${activeItem.innerText.trim()} Page!</p>`;
+        }
+      }
+
+      // Image hover effect (only changes if not active)
+      menuItems.forEach(item => {
+        const img = item.querySelector('img');
+
+        item.addEventListener("mouseenter", function () {
+          if (!item.classList.contains("active") && img) {
+            img.src = img.dataset.hover; // Change to hover image
+          }
+        });
+
+        item.addEventListener("mouseleave", function () {
+          if (!item.classList.contains("active") && img) {
+            img.src = img.dataset.default; // Revert to default image
+          }
+        });
+
+        // Click event to update URL hash
+        item.addEventListener("click", () => {
+          window.location.hash = item.dataset.slug;
+        });
+      });
+
+      // Detect hash changes & update the active menu item
+      window.addEventListener("hashchange", updatePage);
+      window.addEventListener("load", updatePage);
+    });
+
+
+    // Select all list items that contain the SVG (adjust the selector if necessary)
+    document.querySelectorAll('li.group').forEach((li) => {
+      // On mouse enter, change all <path> fills in the svg to white
+      li.addEventListener('mouseenter', () => {
+        const paths = li.querySelectorAll('svg path');
+        paths.forEach((path) => {
+          path.setAttribute('fill', 'white');
+        });
+      });
+
+      // On mouse leave, revert all <path> fills in the svg back to black
+      li.addEventListener('mouseleave', () => {
+        const paths = li.querySelectorAll('svg path');
+        paths.forEach((path) => {
+          path.setAttribute('fill', 'black');
+        });
+      });
+    });
+
+  </script>
+</body>
+<script type="module" src="/assets/js/main.js"></script>
+
+</html>
